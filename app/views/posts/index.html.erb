@@ -1,0 +1,11 @@
+<%= link_to "Post a pic", new_post_path %><br>
+<% if @posts %>
+  <% @posts.reverse_each do |post| %>
+    <div class="pic-container">
+      <div class="ratio-fixer"></div>
+      <div class="pic">
+        <%= link_to image_tag(post.pic.url(:small)), post_path(post)  %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
